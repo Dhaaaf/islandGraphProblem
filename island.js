@@ -1,14 +1,23 @@
 function getNeighbors(row, col, graph) {
-
+  let neighbors = []
   // Check top
+  let up = [row - 1, col]
+  if (row - 1 >= 0 && graph[row - 1][col] === 1) neighbors.push(up)
 
   // Check bottom
+  let down = [row + 1, col]
+  if (row + 1 <= graph.length - 1 && graph[row + 1][col] === 1) neighbors.push(down)
 
   // Check left
+  let left = [row, col - 1]
+  if (col - 1 >= 0 && graph[row][col - 1] === 1) neighbors.push(left)
 
   // Check right
+  let right = [row, col + 1]
+  if (col + 1 <= graph[row].length - 1 && graph[row][col + 1] === 1) neighbors.push(right)
 
   // Return neighbors
+  return neighbors
 
   // Your code here
 }
@@ -26,14 +35,14 @@ function islandSize(row, col, graph) {
 
   // While the stack is not empty,
 
-    // Pop the first node
+  // Pop the first node
 
-    // DO THE THING (increment size by 1)
+  // DO THE THING (increment size by 1)
 
-    // Then push all the UNVISITED neighbors on top of the stack
-    // and mark them as visited
-    // HINT: This is what your helper function `getNeighbors` is for
-    // HINT: Remember, you're storing your visited nodes as strings!
+  // Then push all the UNVISITED neighbors on top of the stack
+  // and mark them as visited
+  // HINT: This is what your helper function `getNeighbors` is for
+  // HINT: Remember, you're storing your visited nodes as strings!
 
   // return size
 
